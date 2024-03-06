@@ -1,11 +1,10 @@
-import './App.css';
-import Counter from '@/component/Counter';
+// import './App.css';
 
 function App() {
   return (
-    <div>
-      <Counter />
-    </div>
+    <main>
+      <h2 data-testid='title-text'>Apply Jest</h2>
+    </main>
   );
 }
 
