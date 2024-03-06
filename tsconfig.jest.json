@@ -1,6 +1,6 @@
 {
-  "extends": "./tsconfig.json", // tsconfig.json 설정 적용
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-jsx" // jsx 설정 react-jsx로 적용
+    "jsx": "react-jsx"
   }
 }
