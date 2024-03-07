@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 import App from '@/App';
-import { render, screen, userEvent } from '@/utils/test-utils';
+import { fireEvent, render, screen, userEvent } from '@/utils/test-utils';
 
 import { server } from './mocks/server';
 
@@ -16,6 +16,13 @@ describe('App', () => {
     render(<App />);
     userEvent.click(screen.getByRole('button'));
     expect(await screen.findByText('count is 1')).toBeInTheDocument();
+  });
+  // 버튼 클릭시 카운트가 증가하는지 테스트
+  it('increase state when click button', () => {
+    render(<App />);
+    const button = screen.getByText('count is 0');
+    fireEvent.click(button);
+    expect(screen.getByText('count is 1')).toBeInTheDocument();
   });
 
   it('api success on load', async () => {

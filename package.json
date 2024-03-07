@@ -11,7 +11,8 @@
     "format": "prettier --cache --write .",
     "lint": "eslint --cache .",
     "prepare": "husky",
-    "test": "vitest --coverage"
+    "test": "vitest --coverage",
+    "test:run": "vitest --coverage run"
   },
   "dependencies": {
     "@babel/preset-react": "^7.23.3",

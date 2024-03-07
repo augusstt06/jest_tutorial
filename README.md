@@ -1,4 +1,4 @@
-## Configuration for apply Vitest
+## Configuration for apply [Vitest](https://vitest.dev/guide/)
 
 ### project configuration
 
