@@ -1,19 +1,23 @@
 // import './App.css';
 
-import { useState } from 'react';
-
-import CountButton from './component/CountButton';
-import CountView from './component/CountView';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const increase = () => setCount((prev) => prev + 1);
-  const decrease = () => setCount((prev) => prev - 1);
+  const [count, setCount] = useState<number>(0);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/todos')
+      .then((res) => res.json())
+      .then((res) => setTodos(res.todos));
+  }, []);
   return (
     <main>
       <h2 data-testid='title-text'>Apply Jest</h2>
-      <CountView count={count} />
-      <CountButton increase={increase} decrease={decrease} />
+      <div>
+        <button onClick={() => setCount(count + 1)}>count is {count}</button>
+      </div>
+      {todos.length && <div>Todo List : {todos.length}</div>}
     </main>
   );
 }
